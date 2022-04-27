@@ -1,0 +1,95 @@
+﻿@model VaccineManagement.Models.Entities.Vaccine
+
+@{
+    Layout = "_CRUDLayout";
+}
+
+<div id="fh5co-main">
+    <div class="fh5co-narrow-content animate-box" data-animate-effect="fadeInLeft">
+        <div class="fh5co-header">
+            <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">VACCINE</h2>
+            <div class="fh5co-heading-search">
+                <i class="fas fa-search"></i>
+                <input class="fh5co-heading-search-put animate-box" type="text" placeholder="Search" data-animate-effect="fadeInLeft">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Main Section-->
+<!--Create-->
+<div id="fh5co-main">
+    <div class="fh5co-head-create-new" data-animate-effect="fadeInLeft">
+        <div class="fh5co-head-create" data-animate-effect="fadeInLeft">
+            <span>@(Model.vaccineId!=0 ? "Edit" : "Create New")</span>
+            <span class="fh5co-head-create-desc">@(Model.vaccineId!=0 ? "Please edit your vaccine information !!" : "Please enter new vaccine !!")</span>
+        </div>
+        <form method="POST" class="fh5co-body-create" data-animate-effect="fadeInLeft">
+
+            <div class="fh5co-body-create-line-and-vaccine">
+                <div class="fh5co-body-create-line">
+
+                </div>
+
+                <div class="fh5co-body-create-vaccine" data-animate-effect="fadeInLeft">
+                    @if (Model.vaccineId != 0)
+                    {
+                        <input type="hidden" asp-for="vaccineId" />
+                    }
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>Vaccine</span>
+                        <div class="fh5co-body-create-item">
+                            <input asp-for="name" type="text" placeholder="Enter value">
+                            <span asp-validation-for="name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>Origin</span>
+                        <div class="fh5co-body-create-item">
+                            <input asp-for="origin" type="text" placeholder="Enter value">
+                            <span asp-validation-for="origin" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>Max Range</span>
+                        <div class="fh5co-body-create-item">
+                            <input asp-for="maxRange" type="number" placeholder="Enter number" min="0">
+                            <span asp-validation-for="maxRange" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>Expired</span>
+                        <div class="fh5co-body-create-item">
+                            <input asp-for="expired" type="number" placeholder="Enter number" min="0">
+                            <span asp-validation-for="expired" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>Doses</span>
+                        <div class="fh5co-body-create-item">
+                            <input asp-for="doses" type="number" placeholder="Enter number" min="0">
+                            <span asp-validation-for="doses" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="fh5co-body-create-btn">
+                <button type="submit" class="btn-green-hover">@(Model.vaccineId !=0 ? "Edit" : "Create" )</button>
+                <button type="button"  class="fh5co-body-create-btn-cancel btn-white-hover"><a asp-action="Index" asp-controller="Vaccines">Back</a></button>
+            </div>
+            <div class="fh5co-body-create-backlist lead-2">
+
+            </div>
+
+        </form>
+    </div>
+
+
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

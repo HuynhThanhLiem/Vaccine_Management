@@ -1,0 +1,69 @@
+﻿@model VaccineManagement.Models.Entities.District
+
+@{
+    Layout = "_CRUDLayout";
+}
+
+<div id="fh5co-main">
+    <div class="fh5co-narrow-content animate-box" data-animate-effect="fadeInLeft">
+        <div class="fh5co-header">
+            <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">District</h2>
+            <div class="fh5co-heading-search">
+                <i class="fas fa-search"></i>
+                <input class="fh5co-heading-search-put animate-box" type="text" placeholder="Search" data-animate-effect="fadeInLeft">
+            </div>
+        </div>
+    </div>
+</div>
+<!--Main Section-->
+<div id="fh5co-main">
+    <div class="fh5co-head-create-new" data-animate-effect="fadeInLeft">
+        <div class="fh5co-head-create" data-animate-effect="fadeInLeft">
+            <span>@(Model.districtId !=0 ? "Edit" : "Create New")</span>
+            <span class="fh5co-head-create-desc">@(Model.districtId !=0 ? "Please edit your district information !!" : "Please enter new district !!")</span>
+        </div>
+        <form method="post" class="fh5co-body-create" data-animate-effect="fadeInLeft">
+            <div class="fh5co-body-create-line-and-vaccine">
+                <div class="fh5co-body-create-line">
+
+                </div>
+                <div class="fh5co-body-create-vaccine" data-animate-effect="fadeInLeft">
+                    @if (Model.districtId != 0)
+                    {
+                        <input type="hidden" asp-for="districtId" />
+                    }
+                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>City</span>
+                        <div>
+                            <select asp-for="cityId" class="fh5co-body-edit-item-select vaccine-registration-vaccination-sl" asp-items="ViewBag.cityId" required></select>
+                            <span asp-validation-for="cityId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>District</span>
+                        <div class="fh5co-body-create-item">
+                            <input asp-for="districtName" type="text" placeholder="Enter value" value="">
+                            <span asp-validation-for="districtName" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="fh5co-body-create-btn">
+                <button class="btn-green-hover">@(Model.districtId !=0 ? "Edit" : "Create" )</button>
+                <button type="button" class="fh5co-body-create-btn-cancel btn-white-hover"><a asp-action="Index" asp-controller="Districts">Back</a></button>
+            </div>
+            <div class="fh5co-body-create-backlist lead-2">
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,16 @@
+﻿
+<div class="vaccine-delete logout-right-now-pls" data-animate-effect="fadeInLeft">
+    <div class="vaccine-delete-header">
+        <span>Logout</span>
+        <i class=" out-delete-vaccine out-logout-vaccine fas fa-times"></i>
+    </div>
+    <form asp-controller="UserAuth" asp-action="Logout" asp-area="" method="post">
+        <div class="vaccine-delete-question">
+            Are you sure you want to logout?
+        </div>
+        <div class="vaccine-delete-button-1">
+            <button class="out-cancel-vaccine out-cancel-logout">Cancel</button>
+            <button type="submit" class="vaccine-delete-button-1-hover"><a>Logout</a></button>
+        </div>
+    </form>
+</div>

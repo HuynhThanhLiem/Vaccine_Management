@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+    <nav id="fh5co-main-menu" role="navigation">
+        <div class="head-nav">
+            <h4 class="head-nav-altteam"> ALT TEAM </h4>
+            <hr class="head-nav-hr">
+            <img class="head-nav-img" alt="logo" src="/images/injection-blood-medicine-care-treatment-hospital-recovery-36121.png">
+            <h3 class="head-nav-vaccination"><a asp-action="Index" asp-controller="Admin/Dashboard">VACCINATION MANAGEMENT</a></h3>
+            <p class="head-nav-username">Hello</p>
+            <p class="head-nav-email">@User.Identity.Name</p>
+        </div>
+        <div class="fh5co-main-menu-nav">NAVIGATION</div>
+        <ul class="fh5co-main-menu-nav-ul">
+            <li class="fh5co-main-menu-nav-item">
+                <i class="fas fa-home"></i>
+                <a asp-action="Index" asp-controller="Dashboard">Home</a>
+            </li>
+            <li class="fh5co-main-menu-nav-item-report fh5co-main-menu-nav-item">
+                <i class="fas fa-file-alt"></i>
+                <a class="vaccine-regis" asp-action="Index" asp-controller="Reports">Report</a>
+            </li>
+            <li class="fh5co-main-menu-nav-item">
+                <i class="fas fa-share-square"></i>
+                <a class="fh5co-main-menu-nav-white" asp-area="" asp-action="Index" asp-controller="Home">As a client</a>
+            </li>
+            <li class="login-pls fh5co-main-menu-nav-item">
+                <i class="color-white-pls fas fa-sign-out-alt"></i>
+                <a href="#" class="fh5co-main-menu-logout">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="fh5co-footer">
+        <a class="fh5co-footer-help" href="">Need help?</a>
+        <div class="fh5co-footer-contact">
+            <p>+84 356798098</p>
+            <p>altteam.help@gmail.com</p>
+        </div>
+    </div>
+</aside>

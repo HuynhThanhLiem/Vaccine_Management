@@ -1,0 +1,160 @@
+﻿@{
+    ViewData["Title"] = "Search Certificate";
+}
+<div id="fh5co-page">
+    <!-- Navbar -->
+    <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+        <nav id="fh5co-main-menu" role="navigation">
+            <div class="head-nav">
+                <h4 class="head-nav-altteam"> ALT TEAM </h4>
+                <hr class="head-nav-hr">
+                <img class="head-nav-img" alt="logo" src="/images/injection-blood-medicine-care-treatment-hospital-recovery-36121.png">
+                <h3 class="head-nav-vaccination"><a asp-action="Index" asp-controller="Home">VACCINATION MANAGEMENT</a></h3>
+                <partial name="_GreetingPartial">
+            </div>
+            <div class="fh5co-main-menu-nav">NAVIGATION</div>
+            <ul class="fh5co-main-menu-nav-ul">
+                <li class="fh5co-main-menu-nav-item">
+                    <i class="fas fa-home"></i>
+                    <a asp-action="Index" asp-controller="Home">Home</a>
+                </li>
+                <li class="fh5co-main-menu-nav-item">
+                    <i class="fas fa-user-plus"></i>
+                    <a class="vaccine-regis" asp-action="Index" asp-controller="Registration">Vaccine registration</a>
+                </li>
+                <li class="fh5co-main-menu-nav-item">
+                    <i class="fas fa-edit"></i>
+                    <a class="fh5co-main-menu-nav-white" asp-action="Index" asp-controller="Declaration">Health declaration</a>
+                </li>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-item-search onhold-item-nav-search accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <i class="fas fa-search"></i>
+                                Search
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse in" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="option-search-inject fh5co-main-menu-nav-search-opt-a1">
+                                    <a asp-action="Index" asp-controller="SearchCertificate">Obtain your Covid-19 vaccine certificate</a>
+                                </div>
+                                <div class="option-search-inject2 fh5co-main-menu-nav-search-opt-a2">
+                                    <a asp-action="Index" asp-controller="SearchRegistration">Look up injection registration</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <li class="login-pls fh5co-main-menu-nav-item">
+                    <partial name="_LoginPartial">
+                </li>
+            </ul>
+        </nav>
+        <div class="fh5co-footer">
+            <a class="fh5co-footer-help" href="">Need help?</a>
+            <div class="fh5co-footer-contact">
+                <p>+84 356798098</p>
+                <p>altteam.help@gmail.com</p>
+            </div>
+        </div>
+    </aside>
+    <!-- End of navbar -->
+
+
+    <div class="search-user-main-2 animate-box" data-animate-effect="fadeInLeft">
+        <div class="search-main-wrapper">
+            <div class="search-main-1 search-main" data-animate-effect="fadeInLeft">
+                <form method="post" id="searchCertificateForm" class="search-main-main-6 search-main-main" data-animate-effect="fadeInLeft">
+                    <span class="search-obtain search-main-main-title">Obtain your Covid-19 vaccine certificate</span>
+                    <div class="search-main-main-input">
+                        <div class="search-main-full-name">
+                            <div class="search-main-full-name-text">
+                                <span>Identification/Citizen identification code/Passport</span>
+                                <span class="search-main-full-name-text-required">(*)</span>
+                            </div>
+                            <input id="idCard" name="idCard" type="text" onclick="reset_certificateForm()"
+                            placeholder="Identification/Citizen identification code/Passport" required>
+                        </div>
+                    </div>
+
+                    <div class="search-main-code-text-note"><b>Note:</b> If you are vaccinated but your vaccination status is not updated,
+						contact the vaccination site and request to update your information to the “COVID-19 VACCINE PORTAL”. You can obtain 
+						your Covid-19 vaccine certificate and provide your vaccination feedback here.</div>
+                    <div class="btn-green-hover search-main-btn-3 search-main-btn">
+                        <input id="btn-searchCertificate" class="btn-green-hover" type="button" value="Search"
+                        onclick="searchCertificate()"></input>
+                        <i class="search-main-btn-i fas fa-search"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+	<div id="certificateResult">
+        
+	</div>
+    
+    
+</div>
+
+<!--Login-->
+<div class="signInWrap" id="UserLoginModal">
+    <partial name="_UserLoginPartial">
+</div>
+<!--Logout-->
+<div class="vaccine-delete-wrapper logout-right-now">
+    <partial name="_LogoutModal">
+</div>
+<!--Registration-->
+<div class="SignUpWrap" id="UserRegistrationModal">
+	<partial name="_UserRegistrationPartial">
+</div>
+
+@section Scripts{
+    @{ 
+        await Html.RenderPartialAsync("_AuthScriptsPartial");
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+		function reset_certificateForm(){
+	        document.getElementById("idCard").value = '';
+	        document.getElementById("certificateResult").innerHTML = '';
+            $('#btn-searchCertificate').prop('disabled', false);
+        }
+
+        function searchCertificate(){
+            //Btn Search
+            $('#btn-searchCertificate').prop('disabled', true);
+
+            var data = $('#searchCertificateForm').serialize();
+            //console.log(data);
+            //alert(data);
+            $.ajax({
+                type: 'POST',
+                url: '/SearchCertificate/GetCertificate',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: data,
+                success: function(result){
+                    //console.log(result);
+                    //alert(result);
+                    $('#certificateResult').append(result);
+                    //Swal.fire(
+                    //    'Thank you!',
+                    //    'Your declaration has been saved!',
+                    //    'success'
+                    //)
+                },
+                error: function(result){
+                    alert("Failed to received the Data");
+                    console.log("Failed");
+                    //Swal.fire({
+                    //    icon: 'error',
+                    //    title: 'Oops...',
+                    //    text: 'Something went wrong!'
+                    //})
+                }
+            })
+        }
+    </script>
+}

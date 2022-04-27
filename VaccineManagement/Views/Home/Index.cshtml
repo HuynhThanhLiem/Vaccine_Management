@@ -1,0 +1,205 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    var registrated = ViewData["CountRegis"];
+    var vaccineed = ViewData["CountVaccination"];
+}
+
+<div id="fh5co-page">
+    <!-- Navbar -->
+    <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+        <nav id="fh5co-main-menu" role="navigation">
+            <div class="head-nav">
+                <h4 class="head-nav-altteam"> ALT TEAM </h4>
+                <hr class="head-nav-hr">
+                <img class="head-nav-img" alt="logo" src="~/images/injection-blood-medicine-care-treatment-hospital-recovery-36121.png">
+                <h3 class="head-nav-vaccination"><a asp-action="Index" asp-controller="Home">VACCINATION MANAGEMENT</a></h3>
+                <partial name="_GreetingPartial">
+            </div>
+            <div class="fh5co-main-menu-nav">NAVIGATION</div>
+            <ul class="fh5co-main-menu-nav-ul">
+                <li class="onhold-item-nav fh5co-main-menu-nav-item">
+                    <i class="fas fa-home"></i>
+                    <a asp-action="Index" asp-controller="Home">Home</a>
+                </li>
+                <li class="fh5co-main-menu-nav-item">
+                    <i class="fas fa-user-plus"></i>
+                    <a class="vaccine-regis" asp-action="Index" asp-controller="Registration">Vaccine registration</a>
+                </li>
+                <li class="fh5co-main-menu-nav-item">
+                    <i class="fas fa-edit"></i>
+                    <a class="fh5co-main-menu-nav-white" asp-action="Index" asp-controller="Declaration">Health declaration</a>
+                </li>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <i class="fas fa-search"></i>
+                                Search
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse in" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="option-search-inject fh5co-main-menu-nav-search-opt-a1">
+                                    <a asp-action="Index" asp-controller="SearchCertificate">Obtain your Covid-19 vaccine certificate</a>
+                                </div>
+                                <div class="option-search-inject2 fh5co-main-menu-nav-search-opt-a2">
+                                    <a asp-action="Index" asp-controller="SearchRegistration">Look up injection registration</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <partial name="_LoginPartial">
+
+            </ul>
+        </nav>
+        <div class="fh5co-footer">
+            <a class="fh5co-footer-help" href="">Need help?</a>
+            <div class="fh5co-footer-contact">
+                <p>+84 356798098</p>
+                <p>altteam.help@gmail.com</p>
+            </div>
+        </div>
+    </aside>
+    <!-- End of navbar -->
+
+    <div id="fh5co-main" data-animate-effect="fadeInLeft">
+        <div class="fh5co-narrow-content" data-animate-effect="fadeInLeft">
+            <div class="fh5co-header">
+                <h2 class="home-tilte-head fh5co-heading animate-box" data-animate-effect="fadeInLeft">Covid-19 vaccine portal</h2>
+                <div class="fh5co-heading-search">
+                    <i class="fas fa-search"></i>
+                    <input class="fh5co-heading-search-put animate-box" type="text" placeholder="Search" data-animate-effect="fadeInLeft">
+                </div>
+            </div>
+            <div class="totalvaccine-doses animate-box" data-animate-effect="fadeInLeft">
+                <div class="totalvaccine-doses-smaller">
+                    <div class="totalvaccine-doses-nationwide">
+                        <p class="totalvaccine-doses-nationwide-text">
+                            Total vaccine doses registered nationwide
+                        </p>
+                        <p class="totalvaccine-doses-nationwide-number">
+                            @registrated (Vaccinations)
+                        </p>
+                    </div>
+                    <div class="line-up-vaccine-total-doses">
+
+                    </div>
+                    <div class="totalvaccine-doses-nationwide">
+                        <p class="totalvaccine-doses-nationwide-text">
+                            Total vaccine doses administered nationwide
+                        </p>
+                        <p class="totalvaccine-doses-nationwide-number">
+                            @vaccineed (Vaccinations)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="totalvaccine-feedback-2 animate-box" data-animate-effect="fadeInLeft">
+            <div class="totalvaccine-feedback" data-animate-effect="fadeInLeft">
+                <div class="totalvaccine-feedback-smaller" data-animate-effect="fadeInLeft">
+                    <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Feedback form for Covid-19 Vaccine Portal</h2>
+                    <p class="totalvaccine-feedback-smaller-text">
+                        Total vaccine doses registered nationwide
+                    </p>
+                    <a href="./contact.html">
+                        <button class="btn-green-hover totalvaccine-feedback-btn">
+                            Feedback
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+            <div class="totalvaccine-feedback-imagee">
+                <img src="/images/final-01 1.png" alt="5 sao">
+            </div>
+        </div>
+        <div class="home-pape-features">
+            <h2 class="home-tilte-head fh5co-heading animate-box" data-animate-effect="fadeInLeft">Features</h2>
+            <div class="home-item-link col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
+                <div class="blog-entry">
+                    <a asp-action="Index" asp-controller="Registration" class="work-image-popup-features work image-popup" style="background-color: rgb(152,221,202,75%)">
+                        <div class="image-popup-item">
+                            <h1>V</h1>
+                            <span>Vaccine registration</span>
+                        </div>
+                    </a>
+                    <div class="desc">
+                        <p class="desc-title-popup-home">The registration information is completely confidential and only serves the COVID-19 vaccine campaign.</p>
+                        <a asp-action="Index" asp-controller="Registration" class="lead">View More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="home-item-link col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
+                <div class="blog-entry">
+                    <a asp-action="Index" asp-controller="Declaration" class="work-image-popup-features work image-popup" style="background-color: rgb(152,221,202,75%)">
+                        <div class="image-popup-item-color-2 image-popup-item">
+                            <h1>H</h1>
+                            <span>Health declaration</span>
+                        </div>
+                    </a>
+                    <div class="desc">
+                        <p class="desc-title-popup-home">The person health declaration form is for the purpose of protecting the health, safety in activities.</p>
+                        <a asp-action="Index" asp-controller="Declaration" class="lead">View More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="home-item-link col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
+                <div class="blog-entry">
+                    <a asp-action="Index" asp-controller="SearchCertificate" class="work-image-popup-features work image-popup" style="background-color: rgb(152,221,202,75%)">
+                        <div class="image-popup-item-color-3 image-popup-item">
+                            <h1>S</h1>
+                            <span>Search</span>
+                        </div>
+                    </a>
+                    <div class="desc">
+                        <p class="desc-title-popup-home">You can obtain your Covid-19 vaccine certificate and provide your vaccination feedback here.</p>
+                        <a asp-action="Index" asp-controller="SearchCertificate" class="lead">View More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="home-item-link col-md-3 col-sm-6 col-padding animate-box" data-animate-effect="fadeInLeft">
+                <div class="blog-entry">
+                    <a asp-action="Index" asp-controller="SearchRegistration" class="work-image-popup-features work image-popup" style="background-color: rgba(128, 192, 192, 81%)">
+                        <div class="image-popup-item-color-4 image-popup-item">
+                            <h1>S</h1>
+                            <span>Search</span>
+                        </div>
+                    </a>
+                    <div class="desc">
+                        <p class="desc-title-popup-home">If you are under 18 years old, please enter your guardian's phone number to look upinjection registration.</p>
+                        <a asp-action="Index" asp-controller="SearchRegistration" class="lead">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!--Login-->
+    <div class="signInWrap" id="UserLoginModal">
+        <partial name="_UserLoginPartial">
+    </div>
+    <!--Logout-->
+    <div class="vaccine-delete-wrapper logout-right-now">
+        <partial name="_LogoutModal">
+    </div>
+    <!--Registration-->
+    <div class="SignUpWrap" id="UserRegistrationModal">
+		<partial name="_UserRegistrationPartial"/>
+	</div>
+    <!--Forgot Password Modal-->
+	<div class="vaccine-delete-wrapper forgot-password-wrap" id="ForgotPasswordModal">
+        <partial name="_ForgotPasswordPartial" />
+	</div>
+    @section Scripts{
+        @{ 
+            await Html.RenderPartialAsync("_AuthScriptsPartial");
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+

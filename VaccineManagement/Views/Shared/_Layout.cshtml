@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewData["Title"]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+    <meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+    <meta name="author" content="FreeHTML5.co" />
+
+    <script src="https://kit.fontawesome.com/15bc00968f.js" crossorigin="anonymous"></script>
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="~/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="~/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="~/css/flexslider.css">
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="~/css/style.css">
+
+</head>
+
+<body>
+
+    @RenderBody()
+
+    <!-- Signup_signin -->
+    <!--<div class="SignUpWrap">
+        <div class="SignUp">
+            <div class="SignUp-welcome">
+                <img src="./images/bacsivacoyta.png" alt="Movie Time" />
+                <h1>Organization Sign Up</h1>
+            </div>
+            <div class="SignUp_form">
+                <div class="triangle"></div>
+                <i class="btn-exit fas fa-times-circle" aria-hidden="true"></i>
+                <img src="./images/injection-blood-medicine-care-treatment-hospital-recovery-36121.png" alt="Logo" />
+                <h1>SIGN UP</h1>
+                <input type="text" class="forgot-password-input" placeholder="Organization phone number">
+                <input type="email" class="forgot-password-input" placeholder="Email" />
+                <div class="SignUp_password">
+                    <input type='password' class="forgot-password-input input-psw-signup" oninput="myFunction2()" placeholder="Password" />
+                    <i class="signup-psw-1 fas fa-eye" aria-hidden="true" onclick="myFunction1()"></i>
+                    <i class="signup-psw-2 fas fa-eye-slash" onclick="myFunction1()"></i>
+                </div>
+                <div class="SignUp_password">
+                    <input type='password' class="forgot-password-input input-psw-confirm" oninput="myFunction4()" placeholder="Confirm password" />
+                    <i class="confirm-psw-1 fas fa-eye" aria-hidden="true" onclick="myFunction3()"></i>
+                    <i class="confirm-psw-2 fas fa-eye-slash" onclick="myFunction3()"></i>
+                </div>
+                <div class="SignUp_check">
+                    <input type="checkbox" name="Agree" />
+                    <label htmlFor="Agree"> Agree to the terms of Vaccination Management</label>
+                </div>
+                <a href="#"><button class="btn-hover-blue btn-hover-red">Sign up</button></a>
+                <div class="SignUp_toSignUp">
+                    <span>Already have an account?</span>
+                    <button class="btn-hover-blue up-to-login">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!--Login-->
+    <!--<div class="signInWrap">
+        <div class="signIn">
+            <div class="signIn-welcome">
+                <img src="./images/bacsivacoyta.png" alt="Movie Time" />
+                <h1>Organization login</h1>
+            </div>
+            <form class="signIn_form">
+                <i class="btn-exit fas fa-times-circle"></i><br />
+                <img src="./images/injection-blood-medicine-care-treatment-hospital-recovery-36121.png" alt="Logo" />
+                <h1>LOGIN</h1>
+
+                <input class="forgot-password-input" type="email" placeholder="Email or phone number" />
+                <div class="signIn_password">
+                    <input type='password' class="forgot-password-input input-psw-signin" oninput="myFunction6()" placeholder="Password" />
+                    <i class="signin-psw-1 fas fa-eye" aria-hidden="true" onclick="myFunction5()"></i>
+                    <i class="signin-psw-2 fas fa-eye-slash" onclick="myFunction5()"></i>
+                </div>
+                <div class="signIn_check">
+                    <input type="checkbox" name="remember" />
+                    <label htmlFor="remember">Remember</label>
+                </div>
+                <a><button class="btn-hover-blue">Login</button></a>
+                <a class="forgot-password-btn" href="#">Forgot password</a>
+                <div class="signIn_toSignUp">
+                    <span>Don't have an account?</span>
+                    <button class="btn-green-hover up-to-register">Sign up</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="vaccine-delete-wrapper forgot-password-wrap">
+        <div class="vaccine-delete forgot-password-sure" data-animate-effect="fadeInLeft">
+            <div class="vaccine-delete-header">
+                <span>Forgot password?</span>
+                <i class=" out-delete-vaccine forgot-password fas fa-times"></i>
+            </div>
+            <div class="vaccine-delete-question">
+                Please enter your email address or mobile number to search your account.
+            </div>
+            <form action="">
+                <input class="forgot-password-input" type="text" placeholder="Email or phone number" required>
+                <div class="vaccine-delete-button-1">
+                    <button class="out-cancel-vaccine out-cancel-forgot">Cancel</button>
+                    <button class="vaccine-delete-button-1-hover"><a class="submit-btn-forgot" href="#">Submit</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="vaccine-delete-wrapper submit-forgot-password-wrap">
+        <div class="vaccine-delete forgot-password-sure-sc" data-animate-effect="fadeInLeft">
+            <div class="vaccine-delete-header">
+                <span>Successful!</span>
+                <i class=" out-delete-vaccine forgot-password-sc fas fa-times"></i>
+            </div>
+            <div class="vaccine-delete-question">
+                Please check your email address or your phone to create new an account.
+            </div>
+            <div class="vaccine-delete-button-1">
+                <button class="out-cancel-vaccine out-cancel-forgot-sc">Cancel</button>
+                <div class="backlogin-btn">
+                    <button class="vaccine-delete-button-1-hover">
+                        <a href="#"> Back to login</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vaccine-delete-wrapper submit-forgot-password-wrap">
+        <div class="vaccine-delete forgot-password-sure-sc" data-animate-effect="fadeInLeft">
+            <div class="vaccine-delete-header">
+                <span>Successful</span>
+                <i class=" out-delete-vaccine forgot-password-sc fas fa-times"></i>
+            </div>
+            <div class="vaccine-delete-question">
+                Your registration is successfull. Please wait for announcement about your vaccination.
+            </div>
+            <div class="vaccine-delete-button-1">
+                <button class="out-cancel-vaccine out-cancel-forgot-sc">Cancel</button>
+                <div class="backlogin-btn">
+                    <button class="vaccine-delete-button-1-hover">
+                        <a href="#"> Back to home</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- End-of-signup-signin -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="~/js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="~/js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="~/js/jquery.waypoints.min.js"></script>
+    <!-- Flexslider -->
+    <script src="~/js/jquery.flexslider-min.js"></script>
+    <!-- MAIN JS -->
+    <script src="~/js/main.js"></script>
+    <!-- Modernizr JS -->
+    <script src="~/js/modernizr-2.6.2.min.js"></script>
+
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>*@
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿.table-section {
+    background-color: white;
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 2px 4px #8A8D90;
+    border-radius: 0.5em;
+    color: #025B95 !important;
+    overflow-x: scroll;
+}
+
+.table-section thead, tbody, tr, th, td, label{
+    color: #025B95 !important;
+}
+
+.table-section thead, tr, th {
+    background-color: #025B95 !important;
+    color: #FFBD89 !important;
+}
+.dataTables_info {
+    color: #025B95 !important;
+}
+.table-section label{
+    width: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0rem;
+    padding-left: 0.5rem;
+}
+.table-section input {
+    margin: 0rem 0.5rem !important;
+    border: 1px solid #025B95;
+    height: 32px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    line-height: 1.6;
+    background-color: #E7F6FF;
+    padding-right: 10px;
+    width: 60%;
+}
+.table-section select {
+    margin: 0rem 0.5rem !important; 
+    border: 1px solid #025B95;
+    height: 32px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    line-height: 1.6;
+    background-color: #E7F6FF;
+    padding-right: 10px;
+}
+.toast-message {
+    font-size: 14px !important;
+    font-weight: bold !important;
+}
+.select-customize {
+    padding-left: 18px !important;
+}

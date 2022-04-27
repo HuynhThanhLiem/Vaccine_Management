@@ -1,0 +1,210 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div id="fh5co-page">
+    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+    <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+        <nav id="fh5co-main-menu" role="navigation">
+            <div class="head-nav">
+                <h4 class="head-nav-altteam"> ALT TEAM </h4>
+                <hr class="head-nav-hr">
+                <img class="head-nav-img" alt="logo" src="/images/injection-blood-medicine-care-treatment-hospital-recovery-36121.png">
+                <h3 class="head-nav-vaccination"><a asp-action="Index" asp-controller="Dashboard">VACCINATION MANAGEMENT</a></h3>
+                <p class="head-nav-username">Hello</p>
+                <p class="head-nav-email">@User.Identity.Name</p>
+            </div>
+            <div class="fh5co-main-menu-nav">NAVIGATION</div>
+            <ul class="fh5co-main-menu-nav-ul">
+                <li class="onhold-item-nav fh5co-main-menu-nav-item">
+                    <i class="fas fa-home"></i>
+                    <a asp-action="Index" asp-controller="Dashboard">Home</a>
+                </li>
+                <li class="fh5co-main-menu-nav-item-report fh5co-main-menu-nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <a class="vaccine-regis" asp-action="Index" asp-controller="Reports">Report</a>
+                </li>
+
+                <li class="fh5co-main-menu-nav-item">
+                    <i class="fas fa-share-square"></i>
+                    <a class="fh5co-main-menu-nav-white" asp-area="" asp-action="Index" asp-controller="Home">As a client</a>
+                </li>
+                <li class="login-pls fh5co-main-menu-nav-item">
+                    <i class="color-white-pls fas fa-sign-out-alt"></i>
+                    <a href="#" class="fh5co-main-menu-logout">Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="fh5co-footer">
+            <a class="fh5co-footer-help" href="">Need help?</a>
+            <div class="fh5co-footer-contact">
+                <p>+84 356798098</p>
+                <p>altteam.help@gmail.com</p>
+            </div>
+        </div>
+    </aside>
+
+    <!--Link-->
+    <div id="fh5co-main">
+        <div class="fh5co-narrow-content">
+            <div class="fh5co-header">
+                <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Admin Panel</h2>
+                <div class="fh5co-heading-search">
+                    <i class="fas fa-search"></i>
+                    <input class="fh5co-heading-search-put animate-box" type="text" placeholder="Search " data-animate-effect="fadeInLeft">
+                </div>
+
+            </div>
+            <div class="row row-bottom-padded-md" data-animate-effect="fadeInLeft">
+                <!--Anamnesis-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box" data-animate-effect="fadeInLeft">
+                    <a asp-action="Index" asp-controller="Anamnesis" class="work image-popup" style="background-color: rgb(152,221,202,75%)">
+                        <div class="image-popup-item">
+                            <h1>A</h1>
+                            <span>Anamnesis</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End Anamnesis-->
+
+                <!--Vaccine Batch-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box" data-animate-effect="fadeInLeft">
+                    <a asp-action="Index" asp-controller="Batch" class="work image-popup" style="background-color: rgb(213,236,194,75%);">
+                        <div class="image-popup-item">
+                            <h1>B</h1>
+                            <span>Batch</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End Vaccine Batch-->
+
+                <!--City-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box" data-animate-effect="fadeInLeft">
+                    <a asp-action="Index" asp-controller="Cities" class="work image-popup" style="background-color: rgb(255,211,180,75%);">
+                        <div class="image-popup-item">
+                            <h1>C</h1>
+                            <span>City</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End City-->
+
+                <!--Citizen-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box" data-animate-effect="fadeInLeft">
+                    <a asp-action="Index" asp-controller="Citizen" class="work image-popup" style="background-color:rgb(174,225,225,75%); ">
+                        <div class="image-popup-item">
+                            <h1>C</h1>
+                            <span>Citizen</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End Citizen-->
+
+                <!--District-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box" data-animate-effect="fadeInLeft">
+                    <a asp-action="Index" asp-controller="Districts" class="work image-popup" style="background-color: rgba(128, 192, 192, 81%);">
+                        <div class="image-popup-item">
+                            <h1>D</h1>
+                            <span>District</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End District-->
+                
+                <!--Distribution-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box" data-animate-effect="fadeInLeft">
+                    <a asp-action="Index" asp-controller="Distribution" class="work image-popup" style="background-color:rgb(255,170,167,75%); ">
+                        <div class="image-popup-item">
+                            <h1>D</h1>
+                            <span>Distribution</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End Distribution-->
+
+                <!--Health Declaration-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box" data-animate-effect="fadeInLeft">
+                    <a asp-action="Index" asp-controller="Declaration" class="work image-popup" style="background-color: rgb(175,185,200,75%);">
+                        <div class="image-popup-item">
+                            <h1>H</h1>
+                            <span>Health declaration</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End Health Declaration-->
+
+                <!--Medical Staff-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box" data-animate-effect="fadeInLeft">
+                    <a asp-action="Index" asp-controller="Staff" class="work image-popup" style="background-color: rgb(206,151,176,75%);">
+                        <div class="image-popup-item">
+                            <h1>M</h1>
+                            <span>Medical staff</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End Medical Staff-->
+
+                <!--Registration-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box">
+                    <a asp-action="Index" asp-controller="Registration" class="work image-popup" style="background-color: rgb(252,209,209,75%);">
+                        <div class="image-popup-item">
+                            <h1>R</h1>
+                            <span>Registration</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End Registration-->
+
+                <!--Wards-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box">
+                    <a asp-action="Index" asp-controller="Wards" class="work image-popup" style="background-color: rgb(181,205,163,75%);">
+                        <div class="image-popup-item">
+                            <h1>W</h1>
+                            <span>Ward</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End Wards-->
+
+                <!--Vaccine-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box">
+                    <a asp-action="Index" asp-controller="Vaccines" class="work image-popup" style="background-color: rgb(59,156,193,75%);">
+                        <div class="image-popup-item">
+                            <h1>V</h1>
+                            <span>Vaccine</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End vaccine-->
+
+                <!--Vaccination-->
+                <div class="col-md-3 col-sm-6 col-padding text-center animate-box">
+                    <a asp-action="Index" asp-controller="Vaccination" class="work image-popup" style="background-color: rgb(154,129,148,75%);">
+                        <div class="image-popup-item">
+                            <h1>V</h1>
+                            <span>Vaccination</span>
+                        </div>
+                    </a>
+                </div>
+                <!--End Vaccination-->
+
+            </div>
+        </div>
+
+        <!--Logout-->
+        <div class="vaccine-delete-wrapper logout-right-now">
+            <partial name="_LogoutModal">
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script src="~/js/UserLogin.js"></script>
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

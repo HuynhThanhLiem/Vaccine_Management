@@ -1,0 +1,43 @@
+﻿@model VaccineManagement.Models.LoginModel
+
+<!--Login-->
+
+    <div class="signIn">
+        <div class="signIn-welcome">
+            <img src="~/images/bacsivacoyta.png" alt="Movie Time" />
+            <h1>Organization Login</h1>
+        </div>
+
+        <form id="UserLoginForm" asp-controller="UserAuth" asp-action="Login" class="signIn_form">
+            <i class="btn-exit fas fa-times-circle"></i><br />
+            <img src="~/images/injection-blood-medicine-care-treatment-hospital-recovery-36121.png" alt="Logo" />
+            <h1>LOGIN</h1>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="LoginInvalid" />
+
+            <input class="forgot-password-input" type="email" placeholder="Email or phone number" asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+            <div class="signIn_password">
+                <input type="password" class="forgot-password-input input-psw-signin" oninput="myFunction6()" placeholder="Password" asp-for="Password" />
+                <i class="signin-psw-1 fas fa-eye" aria-hidden="true" onclick="myFunction5()"></i>
+                <i class="signin-psw-2 fas fa-eye-slash" onclick="myFunction5()"></i>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="signIn_check">
+                <input type="checkbox" asp-for="RememberMe" />
+                <label htmlFor="remember">Remember</label>
+            </div>
+            <a ><button asp-page="/Account/Login" type="button" id="login" name="login" class="btn-hover-blue">Login</button></a>
+
+            <a class="forgot-password-btn" href="#">Forgot password</a>
+            <div class="signIn_toSignUp">
+                <span>Don't have an account?</span>
+                <button type="button" class="btn-green-hover up-to-register">Sign up</button>
+            </div>
+        </form>
+
+    </div>
+

@@ -1,0 +1,53 @@
+﻿@model VaccineManagement.Models.RegistrationModel
+
+<!--Registration-->
+<div class="SignUp" >            
+	<div class="SignUp-welcome">
+		<img src="~/images/bacsivacoyta.png" alt="Movie Time" />
+		<h1>Organization Sign Up</h1>
+	</div>
+	<form id="UserRegistrationForm" asp-controller="UserAuth" asp-action="RegisterUser" class="SignUp_form">
+		<div class="triangle"></div>
+		<i class="btn-exit fas fa-times-circle" aria-hidden="true"></i>
+		<img src="~/images/injection-blood-medicine-care-treatment-hospital-recovery-36121.png" alt="Logo" />
+		<h1>SIGN UP</h1>
+		
+		<!--Alert-->
+		<div id="alert_placeholder_register">
+		</div>
+
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+		<input type="hidden" asp-for="RegistrationInvalid" />
+
+		<input asp-for="PhoneNumber" name="PhoneNumber" type="text" class="forgot-password-input" placeholder="Organization phone number">
+		<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+		<input asp-for="Email" name="Email" type="email" class="forgot-password-input" placeholder="Email"/>
+		<span asp-validation-for="Email" class="text-danger"></span>
+
+		<div class="SignUp_password">
+			<input asp-for="Password" type="password" name="Password" class="forgot-password-input input-psw-signup" oninput="myFunction2()" placeholder="Password" />
+			<i class="signup-psw-1 fas fa-eye" aria-hidden="true" onclick="myFunction1()"></i>
+			<i class="signup-psw-2 fas fa-eye-slash" onclick="myFunction1()"></i>
+			<span asp-validation-for="Password" class="text-danger"></span>
+		</div>
+		<div class="SignUp_password">
+			<input asp-for="ConfirmPassword" type="password" name="ConfirmPassword" class="forgot-password-input input-psw-confirm" oninput="myFunction4()" placeholder="Confirm password" />
+			<i class="confirm-psw-1 fas fa-eye" aria-hidden="true" onclick="myFunction3()"></i>
+			<i class="confirm-psw-2 fas fa-eye-slash" onclick="myFunction3()"></i>
+			<span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+		</div>
+		<div class="SignUp_check">
+			<input asp-for="AcceptUserAgreement" name="AcceptUserAgreement" type="checkbox"/>
+			<label htmlFor="Agree"> Agree to the terms of Vaccination Management</label>
+		</div>
+
+		<a><button id="register" name="register" @*asp-page="/Account/Register" *@ disabled type="button" class="btn-hover-blue btn-hover-red">Sign up</button></a> 
+		<div class="SignUp_toSignUp">
+			<span>Already have an account?</span>
+			<button type="button" name="login" class="btn-hover-blue up-to-login" >Login</button>
+		</div>
+	</form>
+	
+</div>

@@ -1,0 +1,340 @@
+﻿@model VaccineManagement.Models.HealthDeclarationViewModel
+
+@{
+    ViewData["Title"] = "Declaration";
+}
+
+<div id="fh5co-page">
+    <!-- Navbar -->
+    <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
+        <nav id="fh5co-main-menu" role="navigation">
+            <div class="head-nav">
+                <h4 class="head-nav-altteam"> ALT TEAM </h4>
+                <hr class="head-nav-hr">
+                <img class="head-nav-img" alt="logo" src="/images/injection-blood-medicine-care-treatment-hospital-recovery-36121.png">
+                <h3 class="head-nav-vaccination"><a asp-action="Index" asp-controller="Home">VACCINATION MANAGEMENT</a></h3>
+                <partial name="_GreetingPartial">
+            </div>
+            <div class="fh5co-main-menu-nav">NAVIGATION</div>
+            <ul class="fh5co-main-menu-nav-ul">
+                <li class="fh5co-main-menu-nav-item">
+                    <i class="fas fa-home"></i>
+                    <a asp-action="Index" asp-controller="Home">Home</a>
+                </li>
+                <li class="fh5co-main-menu-nav-item">
+                    <i class="fas fa-user-plus"></i>
+                    <a class="vaccine-regis" asp-action="Index" asp-controller="Registration">Vaccine registration</a>
+                </li>
+                <li class="onhold-item-nav fh5co-main-menu-nav-item">
+                    <i class="fas fa-edit"></i>
+                    <a class="fh5co-main-menu-nav-white" asp-action="Index" asp-controller="Declaration">Health declaration</a>
+                </li>
+
+                <!--Search-->
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <i class="fas fa-search"></i>
+                                Search
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse in" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="option-search-inject fh5co-main-menu-nav-search-opt-a1">
+                                    <a asp-action="Index" asp-controller="SearchCertificate">Obtain your Covid-19 vaccine certificate</a>
+                                </div>
+                                <div class="option-search-inject2 fh5co-main-menu-nav-search-opt-a2">
+                                    <a asp-action="Index" asp-controller="SearchRegistration">Look up injection registration</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <li class="login-pls fh5co-main-menu-nav-item">
+                    <partial name="_LoginPartial">
+                </li>
+            </ul>
+        </nav>
+        <div class="fh5co-footer">
+            <a class="fh5co-footer-help" href="">Need help?</a>
+            <div class="fh5co-footer-contact">
+                <p>+84 356798098</p>
+                <p>altteam.help@gmail.com</p>
+            </div>
+        </div>
+    </aside>
+    <!-- End of navbar -->
+
+
+    <div id="fh5co-main" data-animate-effect="fadeInLeft">
+        <div class="fh5co-narrow-content" data-animate-effect="fadeInLeft">
+            <div class="fh5co-header">
+                <h2 class="home-tilte-head home-health-delaration fh5co-heading animate-box" data-animate-effect="fadeInLeft">Health declaration</h2>
+            </div>
+            <form method="post" id="declarationForm" class="vaccine-registration-body animate-box" data-animate-effect="fadeInLeft">
+                <!--Information-->
+                <div class="vaccine-registration-information animate-box" data-animate-effect="fadeInLeft">
+                    <span class="vaccine-registration-information-text">1. Person information</span>
+                    <div class="container vaccine-registration-information-all-row">
+                        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                        <div class="row vaccine-registration-information-row1">
+                            <div class="col-md-4 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Fullname
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <input asp-for="fullName" type="text" name="fullname" placeholder="Fullname" required>
+                                <span asp-validation-for="fullName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-4 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Gender
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <select asp-for="gender" class="vaccine-registration-vaccination-sl" required>
+                                    <option value="Men" class="vaccine-registration-vaccination-sl-opt">Man</option>
+                                    <option value="Women" class="vaccine-registration-vaccination-sl-opt">Woman</option>
+                                    <option value="Other" class="vaccine-registration-vaccination-sl-opt">Other</option>
+                                </select>
+                                <span asp-validation-for="gender" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-4 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Date of birth
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <input asp-for="dateOfBirth" type="date" name="dateOfBirth" required>
+                                <span asp-validation-for="dateOfBirth" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-4 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Phone number
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <input asp-for="phoneNumber" type="text" placeholder="Phone number" name="phoneNumber" required>
+                                <span asp-validation-for="phoneNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row vaccine-registration-information-row">
+                            <div class="col-md-3-health col-md-3 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Email
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <input asp-for="email" type="email" name="email" placeholder="Email" required>
+                                <span asp-validation-for="email" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-3-health col-md-3 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Health insurance number
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <input asp-for="healthInsurance" type="text" name="healthInsurance" placeholder="Health insurance number" required>
+                                <span asp-validation-for="healthInsurance" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-3-health col-md-3 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Identification/Citizen-code/Passport
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <input asp-for="idCard" type="text" name="idCard" placeholder="Enter your Identification/Citizen identification code/Passport" required>
+                                <span asp-validation-for="idCard" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-3 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Address
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <input asp-for="address" type="text" name="address" placeholder="Adress" required>
+                                <span asp-validation-for="address" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="row vaccine-registration-information-row1">
+                            <div class="col-md-4 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Nation
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <input asp-for="nation" type="text" name="nation" placeholder="Nation" required>
+                                <span asp-validation-for="nation" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-4 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Nationality
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <input asp-for="nationality" type="text" name="nationality" placeholder="Nationality" required>
+                                <span asp-validation-for="nationality" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-4 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Occupation
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <input asp-for="job" type="text" name="job" placeholder="Occupation" required>
+                                <span asp-validation-for="job" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-4 vaccine-registration-body-vaccination-all">
+                                <div class="vaccine-registration-body-vaccination">
+                                    <span class="vaccine-registration-vaccination-text">
+                                        Workplace
+                                    </span>
+                                    <span class="vaccine-registration-vaccination-force">(*)</span>
+                                </div>
+                                <input asp-for="company" type="text" name="company" placeholder="Workplace" required>
+                                <span asp-validation-for="company" class="text-danger"></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!--Question-->
+                <div class="vaccine-registration-anamnesis">
+                    <span class="vaccine-registration-information-text">2. Within the past 14 days, have you had:</span>
+                    <table class="vaccine-table table-hover" data-animate-effect="fadeInLeft">
+                        <thead>
+                            <tr class="vaccine-table-color" data-animate-effect="fadeInLeft">
+                                <th>
+                                    Health delaration
+                                </th>
+                                <th>
+                                    Yes
+                                </th>
+                                <th class="vaccine-table-no">
+                                    No
+                                </th>
+                                <th>
+                                    Unknown
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="vaccine-table-row" data-animate-effect="fadeInLeft">
+                                <td>1. In the past 14 days, have you visited any province/city, country/territory</td>
+                                <td><input type="radio" name="fromCovidPlace" value="Yes"></td>
+                                <td class="vaccine-table-no"><input type="radio" name="fromCovidPlace" value="No" checked></td>
+                                <td><input type="radio" name="fromCovidPlace" value="Undefined"></td>
+                            </tr>
+                            <tr class="vaccine-table-row" data-animate-effect="fadeInLeft">
+                                <td>2. In the past 14 days, have you experienced at least 1 of the following symptoms: fever, cough, shortness of breath, pneumonia, sore throat, fatigue?  </td>
+                                <td><input type="radio" name="hasSymptom" value="Yes"></td>
+                                <td class="vaccine-table-no"><input type="radio" name="hasSymptom" value="No" checked></td>
+                                <td><input type="radio" name="hasSymptom" value="Undefined"></td>
+                            </tr>
+                            <tr class="vaccine-table-row" data-animate-effect="fadeInLeft">
+                                <td>3. Patients with, or suspected, COVID-19 disease</td>
+                                <td><input type="radio" name="contactSymptom" value="Yes"></td>
+                                <td class="vaccine-table-no"><input type="radio" name="contactSymptom" value="No" checked></td>
+                                <td><input type="radio" name="contactSymptom" value="Undefined"></td>
+                            </tr>
+                            <tr class="vaccine-table-row" data-animate-effect="fadeInLeft">
+                                <td>4. People from countries with COVID-19 disease</td>
+                                <td><input type="radio" name="contactForeigner" value="Yes"></td>
+                                <td class="vaccine-table-no"><input type="radio" name="contactForeigner" value="No" checked></td>
+                                <td><input name="contactForeigner" type="radio" value="Undefined"></td>
+                            </tr>
+                            <tr class="vaccine-table-row" data-animate-effect="fadeInLeft">
+                                <td>5. People with symptoms (Fever, cough, shortness of breath, Pneumonia)</td>
+                                <td><input type="radio" name="contactCovidPerson" value="Yes"></td>
+                                <td class="vaccine-table-no"><input type="radio" name="contactCovidPerson" value="No" checked></td>
+                                <td><input type="radio" name="contactCovidPerson" value="Undefined"></td>
+                            </tr>
+                        </tbody>
+
+
+                    </table>
+
+                    <div class="vaccine-consent-form-agree vaccine-consent-form-confirm">
+                        <input asp-for="makeSure" type="checkbox" name="makeSure" required>
+                        <p>Make sure medical statements are true</p>
+                    </div>
+                </div>
+                <!--Agreement-->
+                <div class="vaccine-consent-form-agree-btn">
+                    <a class="btn-white-hover-2 vaccine-consent-form-agree-btn-2" asp-action="Index" asp-controller="Home">Cancel</a>
+                    <input class="btn-green-hover vaccine-consent-form-agree-btn-3" type="button" onclick="submitDeclarationForm()" value="Confirm">
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+<!--Login-->
+<div class="signInWrap" id="UserLoginModal">
+    <partial name="_UserLoginPartial">
+</div>
+<!--Logout-->
+<div class="vaccine-delete-wrapper logout-right-now">
+    <partial name="_LogoutModal">
+</div>
+<!--Registration-->
+<div class="SignUpWrap" id="UserRegistrationModal">
+	<partial name="_UserRegistrationPartial">
+</div>
+@section Scripts{
+    @{ 
+        await Html.RenderPartialAsync("_AuthScriptsPartial");
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script type="text/javascript">
+        function submitDeclarationForm(){
+            var data = $('#declarationForm').serialize();
+            //console.log(data);
+            //alert(data);
+            $.ajax({
+                type: 'POST',
+                url: '/Declaration/CreateDeclaration',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: data,
+                success: function(result){
+                    //alert("Sucessfully received Data");
+                    //console.log(result);
+                    $("#declarationForm")[0].reset();
+                    Swal.fire(
+                        'Thank you!',
+                        'Your declaration has been saved!',
+                        'success'
+                    )
+                },
+                error: function(result){
+                    //alert("Failed to received the Data");
+                    //console.log("Failed");
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!'
+                    })
+                }
+            })
+        }
+    </script>
+}

@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "_CRUDLayout";
+}
+
+
+<!--Main Content-->
+<div id="fh5co-main">
+    <div class="fh5co-narrow-content animate-box" data-animate-effect="fadeInLeft">
+        <div class="fh5co-header">
+            <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">MEDICAL STAFF</h2>
+            <div class="fh5co-heading-search">
+                <i class="fas fa-search"></i>
+                <input class="fh5co-heading-search-put animate-box" type="text" placeholder="Search" data-animate-effect="fadeInLeft">
+            </div>
+        </div>
+        <div class="create-table-all" data-animate-effect="fadeInLeft">
+            <div class="create-vaccine" data-animate-effect="fadeInLeft">
+                <a asp-action="UpSert" asp-controller="Staff" ><button class="fh5co-head-create-chuyen btn-green-hover">CREATE NEW</button></a>
+            </div>
+            <!--Table-->
+            <div class="table-section">
+                <table id="DT_load_staff" class="table table-striped table-bordered table-hover" width="100%" data-animate-effect="fadeInLeft">
+                    <thead data-animate-effect="fadeInLeft">
+                        <tr>
+                            <th>Staff ID</th>
+                            <th>Full Name</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                            <th>Assignment</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <a asp-action="ExportToExcel" asp-controller="Citizen">Export Excel</a>
+            <!--End Table-->
+        </div>
+    </div>
+</div>
+
+
+    
+

@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (User.IsInRole("Member"))
+    {
+        <li class="login-pls fh5co-main-menu-nav-item">
+            <i class="color-white-pls fas fa-sign-out-alt"></i>
+            <a  class="fh5co-main-menu-logout">Logout</a>
+        </li>
+    }
+    else
+    {
+         <li class="login-pls fh5co-main-menu-nav-item">
+            <i class="fas fa-share-square"></i>
+            <a class="fh5co-main-menu-nav-white" asp-area="Admin" asp-action="Index" asp-controller="DashBoard">As an admin</a>
+        </li>
+        <li class="login-pls fh5co-main-menu-nav-item">
+            <i class="color-white-pls fas fa-sign-out-alt"></i>
+            <a  class="fh5co-main-menu-logout">Logout</a>
+        </li>
+    } 
+}
+else
+{
+    <li class="login-pls fh5co-main-menu-nav-item">
+        <i class="color-white-pls fas fa-sign-out-alt"></i>
+        <a class="fh5co-main-menu-login">Login</a>
+    </li>
+}
+

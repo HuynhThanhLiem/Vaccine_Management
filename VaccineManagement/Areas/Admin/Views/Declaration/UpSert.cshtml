@@ -1,0 +1,113 @@
+﻿@model VaccineManagement.Models.Entities.Health_Declaration
+
+@{
+    Layout = "_CRUDLayout";
+}
+
+<div id="fh5co-main">
+    <div class="fh5co-narrow-content animate-box" data-animate-effect="fadeInLeft">
+        <div class="fh5co-header">
+            <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">HEALTH DELARATION</h2>
+            <div class="fh5co-heading-search">
+                <i class="fas fa-search"></i>
+                <input class="fh5co-heading-search-put animate-box" type="text" placeholder="Search" data-animate-effect="fadeInLeft">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="fh5co-main">
+    <div class="fh5co-head-create-new" data-animate-effect="fadeInLeft">
+        <div class="fh5co-head-create" data-animate-effect="fadeInLeft">
+            <span>@(Model.healthDeclarId !=0 ? "Edit" : "Create New")</span>
+            <span class="fh5co-head-create-desc">@(Model.healthDeclarId !=0 ? "Please edit your health declaration information !!" : "Please enter new health declaration !!")</span>
+        </div>
+
+        <form method="post" class="fh5co-body-create" data-animate-effect="fadeInLeft">
+            <div class="fh5co-body-create-line-and-vaccine">
+                <div class="fh5co-body-create-line">
+
+                </div>
+                @if (Model.healthDeclarId != 0)
+                {
+                    <input type="hidden" asp-for="healthDeclarId" />
+                }
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="fh5co-body-create-vaccine" data-animate-effect="fadeInLeft">
+                    <div class="fh5co-body-create-row">
+                        <span>Citizen</span>
+                        <div class="fh5co-body-create-item">
+                            <input asp-for="citizenId" type="text" placeholder="Enter value">
+                            <span asp-validation-for="citizenId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>HasSymptom</span>
+                        <select asp-for="hasSymptom" class="fh5co-body-create-item-select vaccine-registration-vaccination-sl" required>
+                            <option value="Yes" class="vaccine-registration-vaccination-sl-opt">Yes</option>
+                            <option value="No" class="vaccine-registration-vaccination-sl-opt">No</option>
+                            <option value="Unknown" class="vaccine-registration-vaccination-sl-opt">Unknown</option>
+                        </select>
+                        <span asp-validation-for="hasSymptom" class="text-danger"></span>
+                    </div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>ContactSymptom</span>
+                        <select asp-for="contactSymptom" class="fh5co-body-create-item-select vaccine-registration-vaccination-sl" required>
+                            <option value="Yes" class="vaccine-registration-vaccination-sl-opt">Yes</option>
+                            <option value="No" class="vaccine-registration-vaccination-sl-opt">No</option>
+                            <option value="Unknown" class="vaccine-registration-vaccination-sl-opt">Unknown</option>
+                        </select>
+                        <span asp-validation-for="contactSymptom" class="text-danger"></span>
+                    </div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>ContactForeigner</span>
+                        <select asp-for="contactForeigner" class="fh5co-body-create-item-select vaccine-registration-vaccination-sl" required>
+                            <option value="Yes" class="vaccine-registration-vaccination-sl-opt">Yes</option>
+                            <option value="No" class="vaccine-registration-vaccination-sl-opt">No</option>
+                            <option value="Unknown" class="vaccine-registration-vaccination-sl-opt">Unknown</option>
+                        </select>
+                        <span asp-validation-for="contactForeigner" class="text-danger"></span>
+                    </div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>ContactCovidPerson</span>
+                        <select asp-for="contactCovidPerson" class="fh5co-body-create-item-select vaccine-registration-vaccination-sl" required>
+                            <option value="Yes" class="vaccine-registration-vaccination-sl-opt">Yes</option>
+                            <option value="No" class="vaccine-registration-vaccination-sl-opt">No</option>
+                            <option value="Unknown" class="vaccine-registration-vaccination-sl-opt">Unknown</option>
+                        </select>
+                        <span asp-validation-for="contactCovidPerson" class="text-danger"></span>
+                    </div>
+                    <div class="fh5co-body-create-row" data-animate-effect="fadeInLeft">
+                        <span>FromCovidPlace</span>
+                        <select asp-for="fromCovidPlace" class="fh5co-body-create-item-select vaccine-registration-vaccination-sl" required>
+                            <option value="Yes" class="vaccine-registration-vaccination-sl-opt">Yes</option>
+                            <option value="No" class="vaccine-registration-vaccination-sl-opt">No</option>
+                            <option value="Unknown" class="vaccine-registration-vaccination-sl-opt">Unknown</option>
+                        </select>
+                        <span asp-validation-for="fromCovidPlace" class="text-danger"></span>
+                    </div>
+                    <div class="fh5co-body-create-row">
+                        <span>DeclaratedDate</span>
+                        <div class="fh5co-body-create-item">
+                            <input asp-for="declaratedDate" type="date" placeholder="Enter value" value="">
+                            <span asp-validation-for="declaratedDate" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="fh5co-body-create-btn">
+                <button type="submit" class="btn-green-hover">@(Model.healthDeclarId !=0 ? "Edit" : "Create" )</button>
+                <button type="button" class="fh5co-body-create-btn-cancel btn-white-hover"><a asp-action="Index" asp-controller="Declaration">Back</a></button>
+            </div>
+            <div class="fh5co-body-create-backlist lead-2">
+
+            </div>
+
+        </form>
+    </div>
+
+
+</div>
